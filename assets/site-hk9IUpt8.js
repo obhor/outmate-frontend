@@ -1,0 +1,1 @@
+var e={home:`/`,features:`/features`,pricing:`/pricing`,login:`/login`,signup:`/signup`,forgotPassword:`/forgot-password`,resetPassword:`/reset-password`,verifyEmail:`/verify-email`,app:`/app`},t=`GTM signals, intelligence, and action`;export{t as n,e as t};

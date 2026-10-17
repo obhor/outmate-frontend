@@ -1,0 +1,1 @@
+function e(e,t,{index:n=!0}={}){document.title=e;let r=(e,t)=>document.querySelector(e)?.setAttribute(`content`,t);r(`meta[name="description"]`,t),r(`meta[name="robots"]`,n?`index, follow`:`noindex, nofollow`),r(`meta[property="og:title"]`,e),r(`meta[property="og:description"]`,t),r(`meta[name="twitter:title"]`,e),r(`meta[name="twitter:description"]`,t)}export{e as t};
