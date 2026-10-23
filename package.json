@@ -1,0 +1,11 @@
+{
+  "name": "outmate-frontend",
+  "version": "1.0.0",
+  "private": true,
+  "description": "OutMate marketing homepage and product capability pages",
+  "scripts": {
+    "start": "python3 preview_server.py",
+    "dev": "python3 preview_server.py"
+  },
+  "type": "module"
+}
