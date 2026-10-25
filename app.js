@@ -1,13 +1,13 @@
 /* Site router, interactions, and legacy account/workspace handoff. */
 import { PRODUCT, icon } from './src/catalog.js';
-import { homePage, productPage, featuresPage, pricingPage, notFound } from './src/views.js';
+import { productPage, featuresPage, pricingPage, notFound } from './src/views.js';
 
 function renderRoute() {
   const path = window.location.pathname.replace(/\/+$/, '') || '/';
   document.body.dataset.site = 'outmate';
   let markup;
   let pageDescription = 'OutMate connects prospecting, account research, buying signals, website visitors, social intelligence, and GTM agents in one revenue workflow.';
-  if (path === '/') { document.title = 'OutMate — Find the signal. Make the next move.'; markup = homePage(); }
+  if (path === '/') { window.location.reload(); return; }
   else if (path === '/features') { document.title = 'Platform overview — OutMate'; pageDescription = 'Explore the six connected OutMate capabilities: prospecting, account research, buying signals, website visitors, social and web intelligence, and GTM agents.'; markup = featuresPage(); }
   else if (path === '/pricing') { document.title = 'Pricing and access — OutMate'; pageDescription = 'Review OutMate capabilities and confirm current plan details, availability, and usage terms before making a decision.'; markup = pricingPage(); }
   else if (path.startsWith('/product/')) {
@@ -46,7 +46,7 @@ function wireInteractions() {
     if (link.hasAttribute('data-no-router') || link.target === '_blank') return;
     link.addEventListener('click', event => {
       const url = new URL(link.href, window.location.href);
-      if (url.origin !== window.location.origin || url.pathname === '/login' || url.pathname === '/signup' || url.pathname.startsWith('/forgot-password') || url.pathname.startsWith('/reset-password') || url.pathname.startsWith('/verify-email') || url.pathname === '/app') return;
+      if (url.origin !== window.location.origin || url.pathname === '/' || url.pathname === '/login' || url.pathname === '/signup' || url.pathname.startsWith('/forgot-password') || url.pathname.startsWith('/reset-password') || url.pathname.startsWith('/verify-email') || url.pathname === '/app') return;
       if (url.pathname === window.location.pathname && url.hash) return;
       event.preventDefault();
       history.pushState({}, '', url.pathname + url.search + url.hash);
@@ -84,13 +84,13 @@ document.addEventListener('click', (event) => {
 /* Keep existing compiled auth and app routes intact: the uploaded archive includes the deployed
    bundle but not source. Load that bundle for those routes rather than replacing auth/workspace. */
 const pathname = window.location.pathname.replace(/\/+$/, '') || '/';
-const legacyRoutes = ['/login', '/signup', '/forgot-password', '/reset-password', '/verify-email', '/app'];
+const legacyRoutes = ['/', '/login', '/signup', '/forgot-password', '/reset-password', '/verify-email', '/app'];
 if (legacyRoutes.some(route => pathname === route || pathname.startsWith(route + '/'))) {
   document.body.removeAttribute('data-site');
   document.body.className = 'font-sans antialiased';
   document.getElementById('app').id = 'root';
   document.getElementById('root').innerHTML = '';
-  document.title = pathname.startsWith('/app') ? 'OutMate Workspace' : 'OutMate account';
+  document.title = pathname === '/' ? 'OutMate — GTM Signals, Intelligence, and Action' : pathname.startsWith('/app') ? 'OutMate Workspace' : 'OutMate account';
   const link = document.createElement('link'); link.rel = 'stylesheet'; link.href = '/assets/index-DOSa__M2.css'; document.head.appendChild(link);
   const script = document.createElement('script'); script.type = 'module'; script.src = '/assets/index-BR2VCtzM.js'; document.body.appendChild(script);
 } else {
