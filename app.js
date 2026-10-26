@@ -107,6 +107,7 @@ if (legacyRoutes.some(route => pathname === route || pathname.startsWith(route +
   document.getElementById('root').innerHTML = '';
   document.title = pathname === '/' ? 'OutMate — GTM Signals, Intelligence, and Action' : pathname.startsWith('/app') ? 'OutMate Workspace' : 'OutMate account';
   const link = document.createElement('link'); link.rel = 'stylesheet'; link.href = '/assets/index-DOSa__M2.css'; document.head.appendChild(link);
+  const overrides = document.createElement('link'); overrides.rel = 'stylesheet'; overrides.href = '/layout-overrides.css'; document.head.appendChild(overrides);
   const script = document.createElement('script'); script.type = 'module'; script.src = '/assets/index-BR2VCtzM.js'; document.body.appendChild(script);
 } else {
   window.addEventListener('popstate', renderRoute);

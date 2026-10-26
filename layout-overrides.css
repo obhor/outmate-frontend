@@ -1,0 +1,8 @@
+/* Layout polish for the original compiled marketing bundle (loaded on legacy routes only). */
+:root{--container-6xl:85rem}
+
+/* Decorative vertical guide lines that framed the content column. */
+.pointer-events-none.absolute.inset-0.z-20 .w-px{display:none}
+
+/* Full-width rules between stacked sections. */
+section.border-t.border-slate-200{border-top-width:0}
