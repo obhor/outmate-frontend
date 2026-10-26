@@ -1,6 +1,7 @@
 /* Site router, interactions, and legacy account/workspace handoff. */
 import { PRODUCT, icon } from './src/catalog.js';
-import { productPage, featuresPage, pricingPage, notFound } from './src/views.js';
+import { productPage, featuresPage, notFound } from './src/views.js';
+import { pricingPage } from './src/pricing.js';
 
 function renderRoute() {
   const path = window.location.pathname.replace(/\/+$/, '') || '/';
@@ -42,6 +43,20 @@ function wireInteractions() {
     if (mobileNav) mobileNav.hidden = open;
   });
   document.querySelectorAll('[data-preview-action]').forEach(button => button.addEventListener('click', () => showToast('This is illustrative sample data. Connect the live signal feed to open account-level results.')));
+  const plans = document.querySelector('.plans-grid');
+  if (plans) {
+    const options = document.querySelectorAll('[data-billing-option]');
+    options.forEach(button => button.addEventListener('click', () => {
+      plans.dataset.billing = button.dataset.billingOption;
+      options.forEach(other => other.setAttribute('aria-pressed', String(other === button)));
+    }));
+    document.querySelectorAll('[data-compare-group]').forEach(button => button.addEventListener('click', () => {
+      const rows = document.getElementById(button.dataset.compareGroup);
+      const open = button.getAttribute('aria-expanded') !== 'false';
+      button.setAttribute('aria-expanded', String(!open));
+      if (rows) rows.hidden = open;
+    }));
+  }
   document.querySelectorAll('a[href^="/"]').forEach(link => {
     if (link.hasAttribute('data-no-router') || link.target === '_blank') return;
     link.addEventListener('click', event => {
