@@ -6,6 +6,7 @@ import { pricingPage } from './src/pricing.js';
 function renderRoute() {
   const path = window.location.pathname.replace(/\/+$/, '') || '/';
   document.body.dataset.site = 'outmate';
+  document.body.dataset.page = path === '/pricing' ? 'pricing' : '';
   let markup;
   let pageDescription = 'OutMate connects prospecting, account research, buying signals, website visitors, social intelligence, and GTM agents in one revenue workflow.';
   if (path === '/') { window.location.reload(); return; }

@@ -593,3 +593,110 @@ body[data-site="outmate"] .button-outline-light:hover{background:rgba(255,255,25
 @media(min-width:861px){body[data-site="outmate"] .billing-bar{flex-wrap:nowrap;gap:22px}body[data-site="outmate"] .billing-note{flex-basis:auto;max-width:360px;text-align:left;line-height:1.5}}
 @media(max-width:860px){body[data-site="outmate"] .pricing-hero h1{font-size:clamp(34px,5.6vw,46px)}}
 @media(max-width:640px){body[data-site="outmate"] .plans-grid{grid-template-columns:1fr;gap:9px}body[data-site="outmate"] .plan-card{padding:20px 18px}body[data-site="outmate"] .plan-desc{min-height:0}body[data-site="outmate"] .plan-amount{font-size:30px}body[data-site="outmate"] .billing-note{display:none}body[data-site="outmate"] .pricing-hero .simple-hero-inner{padding-top:34px;padding-bottom:20px}body[data-site="outmate"] .pricing-hero h1{font-size:clamp(34px,9.6vw,42px)}body[data-site="outmate"] .compare-table{min-width:760px}body[data-site="outmate"] .compare-table thead th:first-child,body[data-site="outmate"] .compare-table tbody tr:not(.group-head) td:first-child{min-width:190px}body[data-site="outmate"] .usage-note{padding:14px}body[data-site="outmate"] .faq-item summary{font-size:11px;padding:13px 14px}body[data-site="outmate"] .faq-item p{padding:0 14px 14px}}
+
+/* Pricing page borrows the serving homepage's theme: neutral ink, slate hairlines,
+   black CTAs, 60/48 display type, photographic closing band. Scoped to /pricing. */
+body[data-site="outmate"][data-page="pricing"]{--line:#e5e5e5;--line-strong:#d4d4d4;--radius:18px}
+body[data-site="outmate"][data-page="pricing"] .topline{display:none}
+body[data-site="outmate"][data-page="pricing"] .site-header{border-bottom-color:#ededed;background:rgba(255,255,255,.92)}
+body[data-site="outmate"][data-page="pricing"] .nav-wrap{height:72px}
+body[data-site="outmate"][data-page="pricing"] .brand-word{font-size:20px;font-weight:600;letter-spacing:-.04em}
+body[data-site="outmate"][data-page="pricing"] .nav-link{font-size:14px;font-weight:400;color:#52525b}
+body[data-site="outmate"][data-page="pricing"] .nav-link:hover,body[data-site="outmate"][data-page="pricing"] .nav-link.is-active{color:#171717}
+body[data-site="outmate"][data-page="pricing"] .nav-signin,body[data-site="outmate"][data-page="pricing"] .nav-signin:hover{color:#171717;font-size:14px;font-weight:500}
+body[data-site="outmate"][data-page="pricing"] .button{min-height:44px;border-radius:8px;font-size:14px;font-weight:500;letter-spacing:0}
+body[data-site="outmate"][data-page="pricing"] .button:hover{transform:none}
+body[data-site="outmate"][data-page="pricing"] .button-primary{background:#262626;color:#fafafa;box-shadow:none}
+body[data-site="outmate"][data-page="pricing"] .button-primary:hover{background:#404040;box-shadow:none}
+body[data-site="outmate"][data-page="pricing"] .button-secondary{border-color:#e5e5e5;background:#fff;color:#171717;box-shadow:none}
+body[data-site="outmate"][data-page="pricing"] .button-secondary:hover{border-color:#d4d4d4;background:#fafafa;box-shadow:none}
+body[data-site="outmate"][data-page="pricing"] .nav-actions .button{min-height:40px;padding:0 16px}
+body[data-site="outmate"][data-page="pricing"] .pricing-hero{background:#fff;background-image:none}
+body[data-site="outmate"][data-page="pricing"] .pricing-hero:before{background-image:linear-gradient(rgba(23,23,23,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(23,23,23,.035) 1px,transparent 1px);background-size:56px 56px;mask-image:radial-gradient(ellipse at 50% 0%,#000 10%,transparent 70%)}
+body[data-site="outmate"][data-page="pricing"] .pricing-hero .simple-hero-inner{padding-top:56px;padding-bottom:40px}
+body[data-site="outmate"][data-page="pricing"] .eyebrow{color:#6b7280;font-size:12px;font-weight:400;letter-spacing:.025em}
+body[data-site="outmate"][data-page="pricing"] .pricing-hero .eyebrow{padding:6px 12px;border:1px solid #e5e5e5;border-radius:999px;background:rgba(255,255,255,.75);color:#52525b}
+body[data-site="outmate"][data-page="pricing"] .pricing-hero .eyebrow-dot{width:6px;height:6px;background:#7c3aed;box-shadow:0 0 0 3px rgba(124,58,237,.09)}
+body[data-site="outmate"][data-page="pricing"] .pricing-hero h1{max-width:760px;margin:22px 0 18px;font-size:clamp(38px,4.6vw,60px);line-height:1.05;letter-spacing:-.04em;font-weight:600;color:#171717}
+body[data-site="outmate"][data-page="pricing"] .pricing-hero h1 span{color:inherit;background:none;-webkit-text-fill-color:currentColor}
+body[data-site="outmate"][data-page="pricing"] .pricing-hero .simple-hero-inner>p{max-width:660px;font-size:16px;line-height:1.65;color:#52525b}
+body[data-site="outmate"][data-page="pricing"] .section{padding:64px 0}
+body[data-site="outmate"][data-page="pricing"] .pricing-options{padding-top:8px;background:#fff}
+body[data-site="outmate"][data-page="pricing"] .section-heading{margin-bottom:36px}
+body[data-site="outmate"][data-page="pricing"] .section-heading h2,body[data-site="outmate"][data-page="pricing"] .faq-intro h2{font-size:clamp(32px,3.4vw,48px);line-height:1.1;letter-spacing:-.04em;font-weight:600;color:#171717}
+body[data-site="outmate"][data-page="pricing"] .section-heading h2 span,body[data-site="outmate"][data-page="pricing"] .faq-intro h2 span{color:inherit}
+body[data-site="outmate"][data-page="pricing"] .section-heading>p{max-width:560px;font-size:16px;line-height:1.6;color:#52525b}
+body[data-site="outmate"][data-page="pricing"] .billing-toggle{border-color:#e5e5e5;border-radius:10px;background:#f5f5f5;box-shadow:none}
+body[data-site="outmate"][data-page="pricing"] .billing-option{font-size:13px;font-weight:500;color:#52525b;border-radius:8px}
+body[data-site="outmate"][data-page="pricing"] .billing-option[aria-pressed="true"]{background:#fff;color:#171717;box-shadow:0 1px 2px rgba(0,0,0,.08)}
+body[data-site="outmate"][data-page="pricing"] .billing-save{background:#262626;color:#fff;font-size:9.5px;letter-spacing:.08em}
+body[data-site="outmate"][data-page="pricing"] .billing-note{font-size:13px;color:#71717a}
+body[data-site="outmate"][data-page="pricing"] .plans-grid{gap:14px}
+body[data-site="outmate"][data-page="pricing"] .plan-card{padding:24px;border-color:#e2e8f0;border-radius:18px;box-shadow:0 1px 2px rgba(0,0,0,.05)}
+body[data-site="outmate"][data-page="pricing"] .plan-card:hover{transform:none;border-color:#cbd5e1;box-shadow:0 1px 3px rgba(0,0,0,.07)}
+body[data-site="outmate"][data-page="pricing"] .plan-card.is-popular{border-color:#262626;background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.06)}
+body[data-site="outmate"][data-page="pricing"] .plan-name{font-size:20px;font-weight:500;letter-spacing:-.02em;color:#171717}
+body[data-site="outmate"][data-page="pricing"] .plan-badge{border:0;padding:4px 8px;background:#262626;color:#fafafa;font-size:9.5px;letter-spacing:.08em}
+body[data-site="outmate"][data-page="pricing"] .plan-desc{min-height:66px;margin:10px 0 18px;color:#52525b;font-size:14px;line-height:1.55}
+body[data-site="outmate"][data-page="pricing"] .plan-price{min-height:48px}
+body[data-site="outmate"][data-page="pricing"] .plan-amount{font-size:44px;font-weight:600;letter-spacing:-.04em;color:#171717}
+body[data-site="outmate"][data-page="pricing"] .plan-unit{font-size:14px;color:#71717a}
+body[data-site="outmate"][data-page="pricing"] .plan-billing{min-height:34px;margin-top:8px;font-size:12.5px;color:#71717a}
+body[data-site="outmate"][data-page="pricing"] .plan-meta span{padding:4px 10px;border-color:#e5e5e5;border-radius:999px;background:#fff;color:#52525b;font-size:12px}
+body[data-site="outmate"][data-page="pricing"] .plan-meta b{color:#171717;font-weight:500}
+body[data-site="outmate"][data-page="pricing"] .plan-cta{min-height:44px;font-size:14px}
+body[data-site="outmate"][data-page="pricing"] .plan-foot{font-size:12px;color:#71717a}
+body[data-site="outmate"][data-page="pricing"] .plan-features{gap:10px;margin-top:18px;padding-top:18px;border-top-color:#f0f0f0}
+body[data-site="outmate"][data-page="pricing"] .plan-features li{font-size:14px;line-height:1.5;color:#52525b}
+body[data-site="outmate"][data-page="pricing"] .plan-features .icon{width:15px;height:15px;color:#171717}
+body[data-site="outmate"][data-page="pricing"] .pricing-note{margin-top:20px;font-size:12px;color:#71717a}
+body[data-site="outmate"][data-page="pricing"] .usage-note{margin-top:20px;padding:18px 20px;border-color:#e5e5e5;border-radius:16px;background:#fafafa;color:#52525b;font-size:14px;line-height:1.6}
+body[data-site="outmate"][data-page="pricing"] .usage-note>.icon{width:18px;height:18px;color:#71717a}
+body[data-site="outmate"][data-page="pricing"] .usage-note b{color:#171717;font-weight:500}
+body[data-site="outmate"][data-page="pricing"] .usage-note a{color:#171717;font-weight:500;text-decoration:underline;text-underline-offset:3px}
+body[data-site="outmate"][data-page="pricing"] .compare-section{padding-top:64px;border-top:1px solid #ededed;background:linear-gradient(180deg,#fafafa,#fff)}
+body[data-site="outmate"][data-page="pricing"] .compare-scroll{border-color:#e5e5e5;border-radius:16px}
+body[data-site="outmate"][data-page="pricing"] .compare-table{min-width:900px;font-size:14px}
+body[data-site="outmate"][data-page="pricing"] .compare-table th,body[data-site="outmate"][data-page="pricing"] .compare-table td{padding:14px 16px;border-bottom-color:#f0f0f0}
+body[data-site="outmate"][data-page="pricing"] .compare-table th:not(:first-child),body[data-site="outmate"][data-page="pricing"] .compare-table td:not(:first-child){width:200px}
+body[data-site="outmate"][data-page="pricing"] .compare-table thead th{background:#fff;color:#6b7280;font-size:11px;letter-spacing:.08em}
+body[data-site="outmate"][data-page="pricing"] .compare-table thead th:first-child{background:#fff;color:#6b7280}
+body[data-site="outmate"][data-page="pricing"] .compare-table tbody tr:not(.group-head) td:first-child{color:#171717;font-size:14px;font-weight:500}
+body[data-site="outmate"][data-page="pricing"] .compare-table thead th.is-popular{background:#f5f5f5;color:#171717}
+body[data-site="outmate"][data-page="pricing"] .compare-toggle{padding:14px 16px;color:#52525b;font-size:11px;letter-spacing:.08em}
+body[data-site="outmate"][data-page="pricing"] .compare-toggle:hover{background:#fafafa}
+body[data-site="outmate"][data-page="pricing"] .c-yes{color:#171717;font-weight:500}
+body[data-site="outmate"][data-page="pricing"] .c-no{color:#d4d4d4}
+body[data-site="outmate"][data-page="pricing"] .c-lim{color:#52525b}
+body[data-site="outmate"][data-page="pricing"] .faq-section{padding:64px 0 72px}
+body[data-site="outmate"][data-page="pricing"] .faq-intro>p{font-size:16px;line-height:1.6;color:#52525b}
+body[data-site="outmate"][data-page="pricing"] .faq-item{border-color:#e5e5e5;border-radius:14px;box-shadow:none}
+body[data-site="outmate"][data-page="pricing"] .faq-item[open]{border-color:#d4d4d4;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+body[data-site="outmate"][data-page="pricing"] .faq-item summary{padding:16px 18px;font-size:15px;font-weight:500;color:#171717}
+body[data-site="outmate"][data-page="pricing"] .faq-item summary:hover{color:#171717}
+body[data-site="outmate"][data-page="pricing"] .faq-item summary .icon{color:#71717a}
+body[data-site="outmate"][data-page="pricing"] .faq-item p{padding:0 18px 18px;font-size:15px;line-height:1.6;color:#52525b}
+body[data-site="outmate"][data-page="pricing"] .closing-section{padding:24px 0 96px}
+body[data-site="outmate"][data-page="pricing"] .closing-card{grid-template-columns:1fr;place-items:center;min-height:420px;text-align:center;border-radius:24px;background:#0d0d0f url('/cta-gtm-artwork.jpg') center/cover no-repeat;box-shadow:0 1px 2px rgba(0,0,0,.06)}
+body[data-site="outmate"][data-page="pricing"] .closing-card:before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(10,10,12,.55),rgba(10,10,12,.78))}
+body[data-site="outmate"][data-page="pricing"] .closing-orb,body[data-site="outmate"][data-page="pricing"] .closing-art{display:none}
+body[data-site="outmate"][data-page="pricing"] .closing-copy{align-items:center;padding:88px 24px;text-align:center}
+body[data-site="outmate"][data-page="pricing"] .closing-copy h2{margin:20px 0 16px;font-size:clamp(36px,4.4vw,56px);line-height:1.05;letter-spacing:-.04em;font-weight:600}
+body[data-site="outmate"][data-page="pricing"] .closing-copy p{max-width:560px;font-size:16px;line-height:1.6;color:rgba(255,255,255,.72)}
+body[data-site="outmate"][data-page="pricing"] .closing-copy .eyebrow{color:rgba(255,255,255,.7)}
+body[data-site="outmate"][data-page="pricing"] .closing-actions{justify-content:center;gap:10px;margin-top:28px}
+body[data-site="outmate"][data-page="pricing"] .closing-card .button-light{background:#fff;color:#171717;box-shadow:none}
+body[data-site="outmate"][data-page="pricing"] .closing-card .button-light:hover{background:#f5f5f5;box-shadow:none}
+body[data-site="outmate"][data-page="pricing"] .closing-card .button-outline-light{border-color:rgba(255,255,255,.45);background:rgba(255,255,255,.08);color:#fff}
+body[data-site="outmate"][data-page="pricing"] .site-footer{border-top-color:#ededed;background:#fff}
+body[data-site="outmate"][data-page="pricing"] .footer-brand-col>p{color:#52525b;font-size:14px;line-height:1.6}
+body[data-site="outmate"][data-page="pricing"] .footer-note{color:#71717a;font-size:12px}
+body[data-site="outmate"][data-page="pricing"] .footer-heading{color:#6b7280;font-size:11px;letter-spacing:.08em}
+body[data-site="outmate"][data-page="pricing"] .footer-column a{color:#52525b;font-size:13px}
+body[data-site="outmate"][data-page="pricing"] .footer-column a:hover{color:#171717}
+body[data-site="outmate"][data-page="pricing"] .footer-cta{border-color:#e5e5e5;border-radius:16px;background:#fafafa}
+body[data-site="outmate"][data-page="pricing"] .footer-cta h3{font-size:20px;font-weight:600}
+body[data-site="outmate"][data-page="pricing"] .footer-cta .button{min-height:40px;font-size:13px}
+body[data-site="outmate"][data-page="pricing"] .footer-bottom{border-top-color:#f0f0f0;color:#71717a;font-size:12px}
+@media(max-width:860px){body[data-site="outmate"][data-page="pricing"] .pricing-hero .simple-hero-inner{padding-top:40px;padding-bottom:32px}body[data-site="outmate"][data-page="pricing"] .section{padding:48px 0}body[data-site="outmate"][data-page="pricing"] .closing-copy{padding:64px 24px}}
+@media(max-width:640px){body[data-site="outmate"][data-page="pricing"] .plan-card{padding:20px}body[data-site="outmate"][data-page="pricing"] .plan-name{font-size:18px}body[data-site="outmate"][data-page="pricing"] .plan-amount{font-size:36px}body[data-site="outmate"][data-page="pricing"] .plan-desc{min-height:0}body[data-site="outmate"][data-page="pricing"] .pricing-hero h1{font-size:clamp(34px,9vw,42px)}body[data-site="outmate"][data-page="pricing"] .section-heading h2,body[data-site="outmate"][data-page="pricing"] .faq-intro h2{font-size:clamp(28px,7.4vw,34px)}body[data-site="outmate"][data-page="pricing"] .compare-table{min-width:820px}}
