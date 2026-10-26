@@ -1,6 +1,17 @@
 /* Layout polish for the original compiled marketing bundle (loaded on legacy routes only). */
 :root{--container-6xl:85rem}
 
+/* Typography: swap the bundle's Geist / Hanken / DM Mono for Switzer + Space Mono. */
+@font-face{font-family:Switzer;src:url('/assets/fonts/switzer-400.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:Switzer;src:url('/assets/fonts/switzer-500.woff2') format('woff2');font-weight:500;font-display:swap}
+@font-face{font-family:Switzer;src:url('/assets/fonts/switzer-600.woff2') format('woff2');font-weight:600;font-display:swap}
+@font-face{font-family:Switzer;src:url('/assets/fonts/switzer-700.woff2') format('woff2');font-weight:700;font-display:swap}
+@font-face{font-family:'Space Mono';src:url('/assets/fonts/space-mono-latin-400.woff2') format('woff2');font-weight:400;font-display:swap}
+:root{--default-font-family:"Switzer","Helvetica Neue",Helvetica,Arial,sans-serif;--font-display:var(--default-font-family);--font-mono:"Space Mono",ui-monospace,SFMono-Regular,Menlo,monospace}
+.font-sans{font-family:var(--default-font-family)}
+.font-display{font-family:var(--font-display)}
+.font-label{font-family:var(--font-mono)}
+
 /* Decorative vertical guide lines that framed the content column. */
 .pointer-events-none.absolute.inset-0.z-20 .w-px{display:none}
 
