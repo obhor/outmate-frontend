@@ -37,6 +37,17 @@ function wireInteractions() {
   trigger?.addEventListener('click', () => setProductMenu(trigger.getAttribute('aria-expanded') !== 'true'));
   productWrap?.addEventListener('mouseenter', () => setProductMenu(true));
   productWrap?.addEventListener('mouseleave', () => setProductMenu(false));
+  const megaLinks = [...document.querySelectorAll('.mega-link[data-mega]')];
+  const megaPanels = [...document.querySelectorAll('[data-mega-panel]')];
+  const activateMega = slug => {
+    megaLinks.forEach(link => link.classList.toggle('is-active', link.dataset.mega === slug));
+    megaPanels.forEach(panel => { panel.hidden = panel.dataset.megaPanel !== slug; });
+  };
+  if (megaLinks.length) {
+    const current = window.location.pathname.split('/')[2];
+    activateMega(megaLinks.some(link => link.dataset.mega === current) ? current : 'prospecting');
+    megaLinks.forEach(link => link.addEventListener('mouseenter', () => activateMega(link.dataset.mega)));
+  }
   const mobileToggle = document.querySelector('.mobile-menu-toggle');
   const mobileNav = document.querySelector('.mobile-nav');
   mobileToggle?.addEventListener('click', () => {
