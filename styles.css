@@ -1295,9 +1295,9 @@ body[data-site="outmate"] .prd-btn:focus-visible,body[data-site="outmate"] .prd-
 
 /* customer proof */
 .prd-proof-label{margin:32px 0 20px;font:400 11px/1.5 "Space Mono",ui-monospace,monospace;letter-spacing:.025em;text-transform:uppercase;color:#a1a1aa}
-.prd-logos{display:flex;flex-wrap:wrap;align-items:center;gap:16px 32px;margin-bottom:44px}
-.prd-cust{display:inline-flex;align-items:center;gap:8px;font-size:15px;font-weight:500;color:#52525b}
-.prd-cust img{width:22px;height:22px;object-fit:contain}
+.prd-logos{display:flex;flex-wrap:wrap;align-items:center;gap:22px 44px;margin-bottom:44px}
+.prd-cust{display:inline-flex;align-items:center;justify-content:center}
+.prd-cust img{height:32px;width:auto;object-fit:contain;filter:grayscale(1);opacity:.8}
 .prd-proof-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:12px}
 .prd-rating{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:#71717a}
 .prd-rating .prd-stars{font-size:13px}

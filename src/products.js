@@ -483,7 +483,7 @@ export function productPage(p) {
   <section class="prd-sec"><div class="prd-wrap"><div class="prd-inset">
     ${eyebrow("Customers")}
     <p class="prd-proof-label">Trusted by GTM teams at fast-growing companies</p>
-    <div class="prd-logos">${CUSTOMERS.map(([n, f]) => `<span class="prd-cust"><img src="/logos/${f}" alt="">${n}</span>`).join("")}</div>
+    <div class="prd-logos">${CUSTOMERS.map(([n, f]) => `<span class="prd-cust"><img src="/logos/${f}" alt="${n}"></span>`).join("")}</div>
     <div class="prd-proof-head"><h2 class="prd-h2">Teams that switched don't go back.</h2><span class="prd-rating"><span class="prd-stars" aria-hidden="true">★★★★★</span><b>4.8 / 5</b> from 200+ reviews</span></div>
     <div class="prd-quotes">${QUOTES.map(quote).join("")}</div>
   </div></div></section>
