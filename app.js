@@ -28,12 +28,15 @@ function renderRoute() {
 function wireInteractions() {
   const trigger = document.querySelector('.product-trigger');
   const menu = document.querySelector('.mega-menu');
-  trigger?.addEventListener('click', () => {
-    const open = trigger.getAttribute('aria-expanded') === 'true';
-    trigger.setAttribute('aria-expanded', String(!open));
-    if (menu) menu.hidden = open;
-    document.querySelector('.nav-product-wrap')?.classList.toggle('menu-open', !open);
-  });
+  const productWrap = document.querySelector('.nav-product-wrap');
+  const setProductMenu = open => {
+    trigger?.setAttribute('aria-expanded', String(open));
+    if (menu) menu.hidden = !open;
+    productWrap?.classList.toggle('menu-open', open);
+  };
+  trigger?.addEventListener('click', () => setProductMenu(trigger.getAttribute('aria-expanded') !== 'true'));
+  productWrap?.addEventListener('mouseenter', () => setProductMenu(true));
+  productWrap?.addEventListener('mouseleave', () => setProductMenu(false));
   const mobileToggle = document.querySelector('.mobile-menu-toggle');
   const mobileNav = document.querySelector('.mobile-nav');
   mobileToggle?.addEventListener('click', () => {

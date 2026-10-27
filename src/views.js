@@ -2,7 +2,7 @@
 import { PRODUCT, icon, productHref, productCard } from './catalog.js';
 import { productPage as productTemplate } from './products.js';
 
-function brand() { return `<a class="brand" href="/" aria-label="OutMate home"><span class="brand-mark"><img src="/logo-mark.png" alt="" /></span><span class="brand-word">OutMate<span>REVENUE EXECUTION</span></span></a>`; }
+function brand() { return `<a class="brand" href="/" aria-label="OutMate home"><span class="brand-mark"><img src="/logo-mark.png" alt="" /></span><span class="brand-word">OutMate</span></a>`; }
 export function header(active='') {
   return `<div class="topline"><div class="container topline-inner"><span class="topline-dot"></span><span>Signals are only useful when they lead somewhere.</span><a href="/product/signals">See the OutMate workflow ${icon('arrow')}</a></div></div>
   <header class="site-header"><div class="container nav-wrap">${brand()}
@@ -10,10 +10,10 @@ export function header(active='') {
       <div class="nav-product-wrap"><button class="nav-link product-trigger ${active==='product'?'is-active':''}" type="button" aria-expanded="false" aria-controls="product-menu">Product ${icon('down','tiny-icon')}</button>
         <div class="mega-menu" id="product-menu" hidden><div class="mega-intro"><span class="eyebrow">THE OUTMATE PLATFORM</span><h3>One motion.<br><span>Six connected capabilities.</span></h3><p>Move from finding an account to understanding why now—and deciding what to do next.</p><a class="text-link" href="/#product">Explore the platform ${icon('arrow')}</a></div><div class="mega-links">${PRODUCT.map(p=>`<a class="mega-link" href="${productHref(p)}"><span class="mega-icon">${icon(p.icon)}</span><span><strong>${p.name}</strong><small>${p.summary}</small></span>${icon('chevron','mega-chevron')}</a>`).join('')}</div></div>
       </div>
-      <a class="nav-link" href="/#workflow">How it works</a><a class="nav-link" href="/features">Platform</a><a class="nav-link" href="/pricing">Pricing</a>
+      <a class="nav-link" href="/pricing">Pricing</a>
     </nav>
-    <div class="nav-actions"><a class="nav-signin" href="/login">Sign in</a><a class="button button-primary button-small" href="/signup">Start for free ${icon('arrow')}</a><button class="mobile-menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false">${icon('menu')}</button></div>
-  </div><div class="mobile-nav" hidden><div class="mobile-nav-inner"><div class="mobile-nav-label">PRODUCT</div>${PRODUCT.map(p=>`<a href="${productHref(p)}">${p.name}${icon('chevron')}</a>`).join('')}<div class="mobile-nav-divider"></div><a href="/#workflow">How it works</a><a href="/features">Platform</a><a href="/pricing">Pricing</a><a href="/login">Sign in</a><a class="button button-primary" href="/signup">Start for free ${icon('arrow')}</a></div></div></header>`;
+    <div class="nav-actions"><a class="nav-signin" href="/login">Log in</a><a class="button button-primary button-small" href="/signup">Get started</a><button class="mobile-menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false">${icon('menu')}</button></div>
+  </div><div class="mobile-nav" hidden><div class="mobile-nav-inner"><div class="mobile-nav-label">PRODUCT</div>${PRODUCT.map(p=>`<a href="${productHref(p)}">${p.name}${icon('chevron')}</a>`).join('')}<div class="mobile-nav-divider"></div><a href="/pricing">Pricing</a><a href="/login">Log in</a><a class="button button-primary" href="/signup">Get started</a></div></div></header>`;
 }
 export function footer() {
   return `<footer class="site-footer"><div class="container"><div class="footer-main"><div class="footer-brand-col">${brand()}<p>Find the signal. Understand the account. Make the next move.</p><span class="footer-note">AI-native revenue execution, built around context.</span></div><div class="footer-column"><span class="footer-heading">PRODUCT</span>${PRODUCT.map(p=>`<a href="${productHref(p)}">${p.name}</a>`).join('')}</div><div class="footer-column"><span class="footer-heading">EXPLORE</span><a href="/#workflow">How it works</a><a href="/features">Platform overview</a><a href="/pricing">Pricing</a><a href="/login">Sign in</a></div><div class="footer-cta"><span class="eyebrow">START WITH A SIGNAL</span><h3>Make the next move<br>with more context.</h3><a class="button button-primary" href="/signup">Start for free ${icon('arrow')}</a></div></div><div class="footer-bottom"><span>© <span id="year"></span> OutMate AI</span><span>Find → Understand → Act</span><a href="#top">Back to top ↑</a></div></div></footer>`;
