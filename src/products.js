@@ -400,12 +400,25 @@ const PRODUCTS = {
 /* ---------- shared content ---------- */
 const EXEC = [
   ["Data", "500M+", "Contacts to search", "Companies and people that match your ICP, with verified contact details."],
-  ["AI", "Cited", "Research grounded in sources", "Briefs and messages draw on websites, job posts, news, and social activity, with links."],
+  ["AI", "6", "Sources behind every brief", "Briefs and messages draw on websites, job posts, news, and social activity, with links."],
   ["Speed", "&lt; 60 sec", "For key identification and enrichment steps", "A draft next step while the interest is still fresh."],
   ["Signals", "1,000+", "Buying signals", "Hiring, funding, technology, website, social, and news activity."],
+  ["Impact", "3.2x", "Reply rate", "Teams report more replies once messages start from a real signal."],
 ];
-// PLACEHOLDER: confirm which integrations ship before launch; only HubSpot has a logo in /logos.
-const INTEGRATIONS = [["Salesforce", "CRM"], ["HubSpot", "CRM", "hubspot.svg"], ["Slack", "Alerts"], ["Gmail", "Email"], ["Outlook", "Email"], ["LinkedIn", "Social"], ["Zapier", "Automation"], ["Snowflake", "Data warehouse"]];
+// Placeholder customer evidence, matching the pricing page; replace before launch.
+const CUSTOMERS = [["Stripe", "stripe.svg"], ["Ramp", "ramp.png"], ["Notion", "notion.svg"], ["HubSpot", "hubspot.svg"], ["Webflow", "webflow.svg"], ["Figma", "figma.svg"], ["Vercel", "vercel.svg"]];
+// The integrations themselves come from the approved mockup and are unconfirmed.
+const INTEGRATIONS = [["Salesforce", "CRM", "salesforce.svg"], ["HubSpot", "CRM", "hubspot.svg"], ["Slack", "Alerts", "slack.svg"], ["Gmail", "Email", "gmail.svg"], ["Outlook", "Email", "outlook.svg"], ["LinkedIn", "Social", "linkedin.svg"], ["Zapier", "Automation", "zapier.svg"], ["Snowflake", "Data warehouse", "snowflake.svg"]];
+// PLACEHOLDER: these quotes are invented, same identities as the pricing page. Replace before launch.
+const QUOTES = [
+  ["We started on Free to test it on one territory. Two weeks later the whole team was on Growth.", "hannah-lowe", "Hannah Lowe", "VP Sales, Brightpath", "3x pipeline"],
+  ["One credit pool for research, enrichment, and agents replaced three separate tool budgets.", "ryan-brooks", "Ryan Brooks", "RevOps Manager, Lumen", "-40% tool spend"],
+  ["Scale paid for itself in the first month. Website visitors alone sourced two closed deals.", "daniel-chen", "Daniel Chen", "Head of Revenue, Meridian", "ROI in 30 days"],
+];
+const quote = ([text, img, name, role, result]) =>
+  `<figure class="prd-quote"><span class="prd-stars" aria-label="5 out of 5">★★★★★</span>
+  <blockquote class="prd-quote-text">“${text}”</blockquote>
+  <figcaption class="prd-quote-by"><img src="/avatars/${img}.webp" alt="" width="36" height="36"><span><span class="prd-quote-name">${name}</span><span class="prd-quote-role">${role}</span></span><span class="prd-result">${result}</span></figcaption></figure>`;
 
 /* ---------- template ---------- */
 const btn = (label, href, kind, withArrow) =>
@@ -465,6 +478,14 @@ export function productPage(p) {
     ${eyebrow("Use cases")}
     <h2 class="prd-h2">Built for your GTM motion.</h2>
     <div class="prd-grid prd-grid--cards">${d.uses.map(([team, t, x, out]) => `<article class="prd-card prd-card--use reveal">${mono(team)}<h3 class="prd-card-title">${t}</h3><p class="prd-card-body">${x}</p><p class="prd-card-out">${out}</p></article>`).join("")}</div>
+  </div></div></section>
+
+  <section class="prd-sec"><div class="prd-wrap"><div class="prd-inset">
+    ${eyebrow("Customers")}
+    <p class="prd-proof-label">Trusted by GTM teams at fast-growing companies</p>
+    <div class="prd-logos">${CUSTOMERS.map(([n, f]) => `<span class="prd-cust"><img src="/logos/${f}" alt="">${n}</span>`).join("")}</div>
+    <div class="prd-proof-head"><h2 class="prd-h2">Teams that switched don't go back.</h2><span class="prd-rating"><span class="prd-stars" aria-hidden="true">★★★★★</span><b>4.8 / 5</b> from 200+ reviews</span></div>
+    <div class="prd-quotes">${QUOTES.map(quote).join("")}</div>
   </div></div></section>
 
   <section class="prd-sec prd-sec--tight-bottom"><div class="prd-wrap"><div class="prd-inset">

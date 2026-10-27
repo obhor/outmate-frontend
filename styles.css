@@ -1293,6 +1293,27 @@ body[data-site="outmate"] .prd-btn:focus-visible,body[data-site="outmate"] .prd-
 .prd-howstep-t{margin:0;font-size:17px;font-weight:500;letter-spacing:-.02em;color:#171717}
 .prd-howstep .prd-card-body{margin:0}
 
+/* customer proof */
+.prd-proof-label{margin:32px 0 20px;font:400 11px/1.5 "Space Mono",ui-monospace,monospace;letter-spacing:.025em;text-transform:uppercase;color:#a1a1aa}
+.prd-logos{display:flex;flex-wrap:wrap;align-items:center;gap:16px 32px;margin-bottom:44px}
+.prd-cust{display:inline-flex;align-items:center;gap:8px;font-size:15px;font-weight:500;color:#52525b}
+.prd-cust img{width:22px;height:22px;object-fit:contain}
+.prd-proof-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:12px}
+.prd-rating{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:#71717a}
+.prd-rating .prd-stars{font-size:13px}
+.prd-rating b{font-weight:500;color:#171717}
+
+/* customer quotes */
+.prd-quotes{margin-top:40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:16px}
+.prd-quote{margin:0;border:1px solid #e5e5e5;border-radius:18px;background:#fff;padding:24px;box-shadow:0 1px 2px rgba(0,0,0,.05);display:flex;flex-direction:column;gap:16px}
+.prd-stars{font-size:14px;letter-spacing:.05em;color:#171717}
+.prd-quote-text{margin:0;font-size:16px;line-height:1.55;color:#171717}
+.prd-quote-by{margin-top:auto;padding-top:16px;border-top:1px solid #f4f4f5;display:flex;align-items:center;gap:10px;font-style:normal}
+.prd-quote-by img{width:36px;height:36px;border-radius:999px}
+.prd-quote-name{display:block;font-size:14px;font-weight:500;color:#171717}
+.prd-quote-role{display:block;font-size:12px;color:#71717a}
+.prd-result{margin-left:auto;font-size:11px;font-weight:500;color:#6d28d9;background:#f5f3ff;border:1px solid #ddd6fe;border-radius:999px;padding:2px 8px;white-space:nowrap}
+
 /* integrations */
 .prd-integrations{margin:40px 0 0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:12px}
 .prd-int{display:flex;align-items:center;gap:12px;border:1px solid #e5e5e5;border-radius:12px;background:#fff;padding:14px 16px}
