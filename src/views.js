@@ -1,5 +1,6 @@
 /* Shared visual components and page templates. */
 import { PRODUCT, icon, productHref, productCard } from './catalog.js';
+import { productPage as productTemplate } from './products.js';
 
 function brand() { return `<a class="brand" href="/" aria-label="OutMate home"><span class="brand-mark"><img src="/logo-mark.png" alt="" /></span><span class="brand-word">OutMate<span>REVENUE EXECUTION</span></span></a>`; }
 export function header(active='') {
@@ -79,23 +80,7 @@ function finalCta() {
   return `<section class="cap-final"><div class="cap-final-img" aria-hidden="true"></div><div class="cap-final-shade" aria-hidden="true"></div><div class="container reveal"><span class="eyebrow eyebrow-light">SIGNALS → INTELLIGENCE → ACTION</span><h2>Turn intelligence into action.</h2><p>Know which accounts to prioritize, why now, and what to do next.</p><div class="hero-actions cap-final-actions"><a class="button cap-button-light" href="/signup">Start for free ${icon('arrow')}</a><a class="button cap-button-ghost" href="/pricing">View pricing</a></div></div></section>`;
 }
 export function productPage(p) {
-  return `${header('product')}<main id="top">
-    <section class="product-hero"><div class="product-hero-grid"></div><div class="hero-orb orb-a"></div><div class="hero-orb orb-b"></div>
-      <div class="container product-hero-inner">
-        <div class="product-hero-copy reveal"><a href="/#product" class="back-link">${icon('arrow')} All capabilities</a><span class="cap-hero-pill"><i></i>${p.eyebrow}</span><h1>${p.title}</h1><p class="hero-lede">${p.description}</p><div class="hero-actions"><a class="button button-primary" href="#demo">See it in action ${icon('arrow')}</a><a class="button button-secondary" href="#capabilities">Explore capabilities</a></div></div>
-        ${promptBlock(p)}
-        <div class="cap-hero-foot reveal"><span></span>Part of one connected OutMate workspace</div>
-      </div>
-    </section>
-    ${proofBand()}
-    ${demoSection(p)}
-    ${valueSection(p)}
-    ${executionBand(p)}
-    ${flowSection(p)}
-    ${usecaseSection(p)}
-    ${ecosystemSection(p)}
-    ${finalCta()}
-  </main>${footer()}`;
+  return `${header('product')}${productTemplate(p)}${footer()}`;
 }
 export function featuresPage() {
   return `${header()}<main id="top"><section class="simple-hero"><div class="container simple-hero-inner reveal"><span class="eyebrow"><span class="eyebrow-dot"></span> THE OUTMATE PLATFORM</span><h1>One connected motion<br><span>for revenue teams.</span></h1><p>Six capabilities help your team find accounts, understand context, spot changes, and prepare the next action.</p><div class="hero-actions"><a class="button button-primary" href="/product/prospecting">Explore prospecting ${icon('arrow')}</a><a class="button button-secondary" href="/#workflow">How it works</a></div></div></section><section class="section product-section"><div class="container"><div class="section-heading reveal"><span class="eyebrow">PLATFORM CAPABILITIES</span><h2>Use each capability on its own.<br><span>Connect them as you grow.</span></h2></div><div class="product-grid">${PRODUCT.map((p,i)=>productCard(p,i)).join('')}</div></div></section><section class="section workflow-section"><div class="container"><div class="section-heading centered reveal"><span class="eyebrow">SIGNAL TO ACTION</span><h2>Keep the context connected.</h2><p>Research becomes more useful when the next step is already within reach.</p></div><div class="workflow-track">${[['01','Find','Discover companies and people.','search'],['02','Understand','Build account and people context.','building'],['03','Prioritize','Review changes and timing.','signal'],['04','Act','Prepare the next workflow.','arrow']].map((s,i)=>`<article class="workflow-step reveal" style="--delay:${i*70}ms"><div class="workflow-step-top"><span class="step-number">${s[0]}</span><span class="step-icon">${icon(s[3])}</span></div><h3>${s[1]}</h3><p>${s[2]}</p></article>`).join('')}</div></div></section></main>${footer()}`;
