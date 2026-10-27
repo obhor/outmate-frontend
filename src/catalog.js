@@ -56,6 +56,71 @@ export const PRODUCT = [
   }
 ];
 
+/* Product-page copy and visuals: prompts, demo captions, use cases. */
+const DETAILS = {
+  prospecting: {
+    icon: 'search', prompt: 'Find B2B software companies hiring revenue leaders in North America',
+    suggestions: ['Find accounts', 'Narrow by fit', 'Save a working list'], executionTitle: 'A wider net, with the context to narrow it.',
+    bulletIcons: ['search', 'users', 'layers'],
+    useCases: [
+      ['SDR TEAMS', 'Build the first list.', 'Turn an ICP description into a focused set of accounts and people before the first touch.'],
+      ['ACCOUNT EXECUTIVES', 'Start with named accounts.', 'Keep the companies worth pursuing in one working list your team can refine.'],
+      ['REVOPS', 'Make targeting repeatable.', 'Encode how your team defines a fit account and reuse it across the funnel.']
+    ]
+  },
+  research: {
+    icon: 'building', prompt: 'Research Northstar Systems and the people I should talk to',
+    suggestions: ['Research an account', 'Map decision-makers', 'Summarize the context'], executionTitle: 'Context that holds up in the conversation.',
+    bulletIcons: ['building', 'users', 'document'],
+    useCases: [
+      ['ACCOUNT EXECUTIVES', 'Walk in prepared.', 'Bring company context and decision-maker roles into one brief before the call.'],
+      ['SDR TEAMS', 'Personalize the first touch.', 'Ground outreach in what the account does and what changed recently.'],
+      ['CUSTOMER TEAMS', 'Keep context close.', 'Reuse account research as relationships and priorities evolve.']
+    ]
+  },
+  signals: {
+    icon: 'signal', prompt: 'Which target accounts changed this week?',
+    suggestions: ['Track buying signals', 'Review changes', 'Prioritize accounts'], executionTitle: 'Signals with the why behind them.',
+    bulletIcons: ['signal', 'compass', 'bolt'],
+    useCases: [
+      ['SALES TEAMS', 'Focus the day.', 'See which accounts changed and which deserve attention first.'],
+      ['REVOPS', 'Standardize prioritization.', 'Define the signals that matter and apply them consistently.'],
+      ['GROWTH TEAMS', 'Catch the timing.', 'Spot funding, hiring, and technology shifts while they are still useful.']
+    ]
+  },
+  'website-visitors': {
+    icon: 'eye', prompt: 'Which target accounts visited the pricing page this week?',
+    suggestions: ['See visitors', 'Check account fit', 'Prepare follow-up'], executionTitle: 'Interest you can actually act on.',
+    bulletIcons: ['eye', 'target', 'arrow'],
+    useCases: [
+      ['MARKETING', 'See demand early.', 'Understand which companies visit key pages before a form is filled.'],
+      ['SDR TEAMS', 'Follow up with context.', 'Start from a visit and the pages that appear to matter.'],
+      ['SALES TEAMS', 'Prioritize interest.', 'Check fit and activity before deciding who to reach out to.']
+    ]
+  },
+  intelligence: {
+    icon: 'globe', prompt: 'Recent news and activity across my target accounts',
+    suggestions: ['Follow accounts', 'Read market news', 'Collect evidence'], executionTitle: 'The market, kept in view.',
+    bulletIcons: ['globe', 'users', 'compass'],
+    useCases: [
+      ['ACCOUNT TEAMS', 'Stay current.', 'Keep announcements and market changes next to the account.'],
+      ['SDR TEAMS', 'Find an opening.', 'Use recent activity to shape a relevant reason to reach out.'],
+      ['LEADERSHIP', 'Read the market.', 'Follow category and competitive changes that affect priorities.']
+    ]
+  },
+  agents: {
+    icon: 'sparkles', prompt: 'Draft outreach for accounts with a new buying signal',
+    suggestions: ['Build a workflow', 'Draft outreach', 'Route for review'], executionTitle: 'Work that moves without losing context.',
+    bulletIcons: ['sparkles', 'mail', 'network'],
+    useCases: [
+      ['SDR TEAMS', 'Prep at scale.', 'Turn account context into structured briefs and drafts for review.'],
+      ['REVOPS', 'Connect the handoffs.', 'Keep triggers, tasks, and follow-up in one understandable workflow.'],
+      ['SALES LEADERS', 'Keep quality visible.', 'Review outputs before anything leaves the workspace.']
+    ]
+  }
+};
+for (const p of PRODUCT) Object.assign(p, DETAILS[p.slug]);
+
 const ICONS = {
   arrow: '<path d="M5 12h14M12 5l7 7-7 7"/>', chevron: '<path d="m9 18 6-6-6-6"/>', down: '<path d="m6 9 6 6 6-6"/>',
   search: '<circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/>', target: '<circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1"/>',
@@ -78,7 +143,7 @@ export function icon(name, cls='') { return `<svg class="icon ${cls}" aria-hidde
 export function productHref(p) { return `/product/${p.slug}`; }
 export function productCard(p, index=0) {
   return `<a class="product-card reveal" style="--delay:${index * 55}ms" href="${productHref(p)}">
-    <span class="card-icon ${p.slug}">${icon(({prospecting:'search',research:'building',signals:'signal','website-visitors':'eye',intelligence:'globe',agents:'sparkles'})[p.slug])}</span>
+    <span class="card-icon ${p.slug}">${icon(p.icon)}</span>
     <span class="card-arrow">${icon('arrow')}</span>
     <span class="card-title">${p.name}</span><span class="card-desc">${p.short}</span><span class="card-foot">Explore capability ${icon('arrow')}</span>
   </a>`;
