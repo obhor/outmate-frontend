@@ -44,7 +44,7 @@ function wireInteractions() {
     if (mobileNav) mobileNav.hidden = open;
   });
   document.querySelectorAll('[data-preview-action]').forEach(button => button.addEventListener('click', () => showToast('This is illustrative sample data. Connect the live signal feed to open account-level results.')));
-  const plans = document.querySelector('.plans-grid');
+  const plans = document.querySelector('[data-billing]');
   if (plans) {
     const options = document.querySelectorAll('[data-billing-option]');
     options.forEach(button => button.addEventListener('click', () => {
